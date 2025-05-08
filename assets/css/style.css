@@ -1,24 +1,15 @@
-/* Base styling */
+/* ========== Base Layout ========== */
 body {
     font-family: sans-serif;
     margin: 2em;
     background: #f9f9f9;
     color: #333;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.4s ease, color 0.4s ease, opacity 0.6s ease-in-out;
+    opacity: 0;
   }
   
-  header, footer {
-    background: #eaeaea;
-    padding: 1em;
-    text-align: center;
-    transition: background-color 0.4s ease, color 0.4s ease;
-  }
-  
-  nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.4s ease, color 0.4s ease;
+  body.page-loaded {
+    opacity: 1;
   }
   
   main {
@@ -29,7 +20,68 @@ body {
     margin-bottom: 2em;
   }
   
-  /* Dark mode styles */
+  /* ========== Header & Footer ========== */
+  header, footer {
+    background-color: #eaeaea;
+    padding: 2.5em 1em 1em 1em;
+    text-align: center;
+    position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  
+  /* ========== Navbar ========== */
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  
+  /* ========== Intro Section ========== */
+  .intro {
+    background-color: #eaeaea;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .intro-content {
+    margin-bottom: 1rem;
+  }
+  
+  .intro-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .intro-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+  
+  /* ========== Resume Button ========== */
+  .resume-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.1rem;
+    border: 2px solid #4caf50;
+    color: #4caf50;
+    font-weight: 600;
+    border-radius: 6px;
+    background: transparent;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+  
+  .resume-btn:hover {
+    background-color: #4caf50;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  /* ========== Dark Mode ========== */
   body.dark-mode {
     background-color: #121212;
     color: #f0f0f0;
@@ -45,7 +97,11 @@ body {
     color: #90cdf4;
   }
   
-  /* Toggle switch */
+  body.dark-mode .slider {
+    background-color: #555;
+  }
+  
+  /* ========== Dark Mode Toggle ========== */
   .switch {
     position: absolute;
     top: 1rem;
@@ -61,7 +117,6 @@ body {
     height: 0;
   }
   
-  /* Slider track */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -74,7 +129,6 @@ body {
     border-radius: 26px;
   }
   
-  /* Slider knob */
   .slider:before {
     position: absolute;
     content: "";
@@ -87,7 +141,6 @@ body {
     border-radius: 50%;
   }
   
-  /* Checked state */
   input:checked + .slider {
     background-color: #4caf50;
   }
@@ -96,14 +149,3 @@ body {
     transform: translateX(24px);
   }
   
-  /* Slider dark mode appearance */
-  body.dark-mode .slider {
-    background-color: #555;
-  }
-  
-  header {
-    background: #eaeaea;
-    padding: 2.5em 1em 1em 1em; /* more top padding */
-    text-align: center;
-    position: relative;
-  }
