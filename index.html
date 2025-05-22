@@ -4,6 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tahmid Chowdhury | Full-Stack Developer</title>
+  <script>
+    (function() {
+      const saved = localStorage.getItem("darkMode");
+      let isDark = saved === "true";
+
+      if (saved === null) {
+        isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+
+      if (isDark) {
+        // Disable transitions temporarily
+        document.documentElement.style.transition = 'none';
+        document.documentElement.classList.add("dark-mode");
+        // Re-enable transitions after a short delay
+        setTimeout(() => {
+          document.documentElement.style.transition = '';
+        }, 0);
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
