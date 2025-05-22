@@ -147,3 +147,18 @@ body {
   input:checked + .slider:before {
     transform: translateX(24px);
   }
+  
+  /* Default link styles */
+a {
+  color: #007bff; /* Example: blue for light mode */
+  text-decoration: none;
+}
+
+/* Link styles in dark mode */
+.dark-mode a {
+  color: #4da8ff; /* Example: lighter blue for dark mode */
+}
+
+.dark-mode a:hover {
+  color: #82caff; /* Example: even lighter blue on hover */
+}
