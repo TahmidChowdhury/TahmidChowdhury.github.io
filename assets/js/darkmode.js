@@ -10,15 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
       isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
   
-    // Apply mode
-    document.body.classList.toggle("dark-mode", isDark);
+    // Apply mode to documentElement to match inline script
+    document.documentElement.classList.toggle("dark-mode", isDark);
     toggle.checked = isDark;
   
     // Handle toggle changes
     toggle.addEventListener("change", function () {
       const isChecked = toggle.checked;
-      document.body.classList.toggle("dark-mode", isChecked);
+      document.documentElement.classList.toggle("dark-mode", isChecked);
       localStorage.setItem("darkMode", isChecked);
     });
   });
-  
