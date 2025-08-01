@@ -24,16 +24,6 @@ A clean, responsive portfolio showcasing my work as a full-stack developer.
 
 ---
 
-## 🏃‍♂️ Local Development
-
-```bash
-git clone https://github.com/TahmidChowdhury/TahmidChowdhury.github.io
-cd TahmidChowdhury.github.io
-python -m http.server 8000
-```
-
----
-
 ## 🤝 Connect
 
 - [LinkedIn](https://linkedin.com/in/tahmidchowdhury)
