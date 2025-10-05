@@ -1,1 +1,7 @@
 .DS_Store
+
+# Job-specific resumes (keep base resume.pdf tracked)
+assets/files/resume_*.html
+assets/files/resume_*.md
+assets/files/resume_*.docx
+assets/files/resume_*.txt

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahmid Chowdhury - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            const saved = localStorage.getItem("darkMode");
+            let isDark = saved === "true";
+
+            if (saved === null) {
+                isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+
+            if (isDark) {
+                // Disable transitions temporarily
+                document.documentElement.style.transition = 'none';
+                document.documentElement.classList.add("dark-mode");
+                // Re-enable transitions after a short delay
+                setTimeout(() => {
+                    document.documentElement.style.transition = '';
+                }, 0);
+            }
+        })();
+    </script>
+    <style>
+        :root {
+            --primary-green: #4caf50;
+            --primary-green-light: #66bb6a;
+            --primary-green-dark: #2e7d32;
+            --text-primary: #1a1a1a;
+            --text-secondary: #404040;
+            --text-muted: #666;
+            --bg-primary: #fafafa;
+            --bg-secondary: #f5f5f5;
+            --bg-accent: #f1f8e9;
+            
+            /* Dark mode colors */
+            --dark-bg-primary: #0a0a0a;
+            --dark-bg-secondary: #111111;
+            --dark-bg-accent: #0d2818;
+            --dark-text-primary: #e8e8e8;
+            --dark-text-secondary: #c0c0c0;
+            --dark-text-muted: #a0a0a0;
+            
+            /* Transitions */
+            --transition-fast: 0.3s ease;
+            
+            color-scheme: light dark;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            font-size: 11pt;
+            transition: all var(--transition-fast);
+        }
+
+        html.dark-mode body {
+            background: var(--dark-bg-primary);
+            color: var(--dark-text-primary);
+        }
+
+        .resume-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: white;
+            min-height: 11in;
+            transition: all var(--transition-fast);
+        }
+
+        html.dark-mode .resume-container {
+            background: var(--dark-bg-secondary);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--primary-green);
+            padding-bottom: 20px;
+        }
+
+        .name {
+            font-size: 28pt;
+            font-weight: 700;
+            color: var(--primary-green-dark);
+            margin-bottom: 5px;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            font-size: 14pt;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 10pt;
+        }
+
+        .contact-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .contact-item {
+            color: var(--dark-text-secondary);
+        }
+
+        .contact-item:hover {
+            color: var(--primary-green);
+        }
+
+        /* Section Headers */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--primary-green-dark);
+            border-bottom: 2px solid var(--bg-secondary);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all var(--transition-fast);
+        }
+
+        html.dark-mode .section-title {
+            color: var(--primary-green-light);
+            border-bottom-color: var(--dark-bg-accent);
+        }
+
+        /* Professional Summary */
+        .summary {
+            font-size: 11pt;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            text-align: justify;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .summary {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .skill-label {
+            color: var(--dark-text-primary);
+        }
+
+        .skill-items {
+            color: var(--text-secondary);
+            font-size: 10pt;
+            line-height: 1.5;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .skill-items {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Experience Section */
+        .job {
+            margin-bottom: 20px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: var(--primary-green-dark);
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .job-title {
+            color: var(--primary-green-light);
+        }
+
+        .company {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .company {
+            color: var(--dark-text-secondary);
+        }
+
+        .job-date {
+            font-size: 10pt;
+            color: var(--text-muted);
+            font-style: italic;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .job-date {
+            color: var(--dark-text-muted);
+        }
+
+        .job-section {
+            margin-bottom: 15px;
+        }
+
+        .job-section-title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .job-section-title {
+            color: var(--dark-text-primary);
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievement-list li {
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+
+        .achievement-list li::before {
+            content: "▸";
+            color: var(--primary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Projects Section */
+        .project {
+            margin-bottom: 20px;
+            border-left: 3px solid var(--bg-secondary);
+            padding-left: 15px;
+            transition: border-color var(--transition-fast);
+        }
+
+        html.dark-mode .project {
+            border-left-color: var(--dark-bg-accent);
+        }
+
+        .project-header {
+            margin-bottom: 8px;
+        }
+
+        .project-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: var(--primary-green-dark);
+            margin-bottom: 3px;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .project-title {
+            color: var(--primary-green-light);
+        }
+
+        .tech-stack {
+            font-size: 10pt;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .tech-stack {
+            color: var(--dark-text-muted);
+        }
+
+        .project-description {
+            font-size: 10pt;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            line-height: 1.5;
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .project-description {
+            color: var(--dark-text-secondary);
+        }
+
+        .project-link {
+            font-size: 10pt;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Education */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .degree {
+            color: var(--dark-text-primary);
+        }
+
+        .university {
+            color: var(--text-muted);
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .university {
+            color: var(--dark-text-muted);
+        }
+
+        /* Additional Qualifications */
+        .qualification-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .qualification-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+
+        .qualification-list li::before {
+            content: "▸";
+            color: var(--primary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: color var(--transition-fast);
+        }
+
+        html.dark-mode .highlight {
+            color: var(--dark-text-primary);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-green);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            .resume-container {
+                padding: 0.3in;
+            }
+            .name {
+                font-size: 24pt;
+            }
+            .section-title {
+                font-size: 12pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Tahmid Chowdhury</h1>
+            <p class="title">Backend Software Engineer</p>
+            <div class="contact-info">
+                <a href="https://tahmidchowdhury.github.io" class="contact-item">🌐 Portfolio</a>
+                <a href="https://www.linkedin.com/in/tahmid-chowdhury-90444746/" class="contact-item">💼 Connect on LinkedIn</a>
+                <a href="https://github.com/TahmidChowdhury" class="contact-item">🔗 GitHub</a>
+                <span class="contact-item">📧 Ask me for contact details</span>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Profile</h2>
+            <p class="summary">
+                I'm a passionate Software Developer with a strong track record in building innovative software solutions. At Victaulic, I leverage NestJS, Node.js, and Angular to create efficient systems and tackle complex challenges. I take pride in writing clean code and ensuring smooth database operations with MySQL. Experienced in the full software development lifecycle, I thrive in collaborative environments and am well-versed in Agile practices. With a thrill for learning new technologies, I continuously seek out opportunities to expand my skill set. Whether it's coding, troubleshooting, or deployment, I focus on delivering impactful solutions and contributing to successful project outcomes.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-label">Backend Technologies:</div>
+                    <div class="skill-items">NestJS, Node.js, JavaScript, TypeScript, SQL, MongoDB, MySQL</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Frontend Technologies:</div>
+                    <div class="skill-items">Angular, HTML5, CSS3, JavaScript, TypeScript</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Cloud & Tools:</div>
+                    <div class="skill-items">Azure, Git, CI/CD, Microservices Architecture</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Databases:</div>
+                    <div class="skill-items">MySQL, MongoDB, PostgreSQL, SQL Server</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Core Competencies:</div>
+                    <div class="skill-items">Team Collaboration, Leadership, Communication, Problem Solving, Reliability</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Methodologies:</div>
+                    <div class="skill-items">Agile Development, API Integration, Full Stack Development, Troubleshooting</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">Employment History</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Software Developer</div>
+                        <div class="company">Victaulic, Easton, PA</div>
+                    </div>
+                    <div class="job-date">May 2022 — Present</div>
+                </div>
+                <ul class="achievement-list">
+                    <li><span class="highlight">Software Development:</span> Utilizing advanced coding skills in NestJS, Node.js, and Angular to develop innovative software solutions tailored to project requirements, enhancing overall functionality and user experience</li>
+                    <li><span class="highlight">Troubleshooting:</span> Proactively identified and resolved complex code issues, improving system performance and minimizing downtime by implementing effective debugging strategies</li>
+                    <li><span class="highlight">Technical Documentation:</span> Compiled and maintained detailed technical documentation, ensuring that team members and stakeholders understood software systems for ongoing maintenance and future development</li>
+                    <li><span class="highlight">Collaboration:</span> Collaborated effectively with cross-functional teams, facilitating seamless integration of code and ensuring consistent project progress through regular communication and feedback</li>
+                    <li><span class="highlight">Database Management:</span> Managed databases efficiently using MySQL, ensuring accurate data storage and retrieval to support application functionality</li>
+                    <li><span class="highlight">Cloud Deployment:</span> Deployed app services and created microservices using Azure, enhancing application scalability and performance in a cloud environment</li>
+                    <li><span class="highlight">Project Management Application:</span> Developed an internal project management application that links Revit to a web interface, focusing on material management. This application streamlined workflows and provided clients with enhanced visibility into project data</li>
+                    <li><span class="highlight">API Integration:</span> Designed and implemented APIs that integrate with MuleSoft, facilitating data exchange between applications and improving overall system interoperability</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Developer I</div>
+                        <div class="company">Savana, Inc., Malvern, PA</div>
+                    </div>
+                    <div class="job-date">October 2019 — April 2022</div>
+                </div>
+                <ul class="achievement-list">
+                    <li>Collaborated with Project Managers and senior leadership to review and approve project configuration and build management plans</li>
+                    <li>Utilized Agile methodology in Jira, participating in daily scrum meetings to enhance team collaboration and project delivery</li>
+                    <li>Designed, built, unit tested, deployed, and managed Savana's Business Process Management Software</li>
+                    <li>Maintained and developed Savana's financial software products to ensure optimal performance and usability</li>
+                    <li>Provided training and onboarding for new hires and existing employees on software usage and best practices</li>
+                    <li>Demonstrated SQL proficiency by creating tables and views within the SQL database, following Feature-Driven Development guidelines</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Backend Developer</div>
+                        <div class="company">Vampeo, Bethesda, MD</div>
+                    </div>
+                    <div class="job-date">June 2017 — March 2018</div>
+                </div>
+                <ul class="achievement-list">
+                    <li>Developed the back-end for a non-profit puzzle game, enabling global user connections and cultural exchange</li>
+                    <li>Implemented multi-language support to enhance player communication and engagement</li>
+                    <li>Designed competitive features by managing player scores and utilizing data for effective matchmaking</li>
+                    <li>Created custom APIs with JavaScript, Node.js, Socket.io, and PostgreSQL</li>
+                    <li>Coordinated collaboration between development teams and QA to streamline workflows</li>
+                    <li>Assisted in debugging Unity projects for the Skyless Gaming team</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="section">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">StockScope Pro | Personal Project</div>
+                    <div class="tech-stack">Next.js 15, React 19, TypeScript, FastAPI, Python, Tailwind CSS, Docker</div>
+                </div>
+                <div class="project-description">
+                    Advanced stock sentiment analysis platform with real-time data processing and AI-powered investment recommendations. Built modern full-stack architecture with professional dashboard interface, implemented comprehensive caching strategy, and developed containerized deployment with multi-level authentication.
+                </div>
+                <a href="https://github.com/TahmidChowdhury/StockScope" class="project-link">GitHub: github.com/TahmidChowdhury/StockScope</a>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <div class="project-title">Enterprise Integration Platform | Victaulic</div>
+                    <div class="tech-stack">Angular, NestJS, Azure Service Bus, Autodesk Forge API, MuleSoft, Mendix</div>
+                </div>
+                <div class="project-description">
+                    Developed seamless connections with multiple enterprise platforms including Autodesk Forge (BIM360) and MuleSoft ESB. Architected real-time data synchronization across manufacturing and construction workflows with Module Federation and Nx monorepo structure enabling independent team development cycles.
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <span class="degree">Bachelor of Science in Computer Science</span>
+                <span class="university">East Stroudsburg University | August 2014 — January 2018</span>
+            </div>
+        </section>
+
+        <!-- Core Competencies -->
+        <section class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <ul class="qualification-list">
+                <li><span class="highlight">Full-Stack Development:</span> Expert in modern JavaScript ecosystems, from React frontends to Node.js backends</li>
+                <li><span class="highlight">Enterprise Architecture:</span> Experience designing and implementing large-scale microservices systems</li>
+                <li><span class="highlight">Team Leadership:</span> Proven ability to mentor developers and establish engineering best practices</li>
+                <li><span class="highlight">Stakeholder Communication:</span> Strong track record of translating business requirements into technical solutions</li>
+                <li><span class="highlight">Performance Optimization:</span> Expertise in improving application performance and deployment efficiency</li>
+                <li><span class="highlight">Cross-Platform Development:</span> Experience with web, mobile, and cloud platform integration</li>
+            </ul>
+        </section>
+
+        <footer style="text-align: center; margin-top: 30px; color: var(--text-muted); font-size: 9pt;">
+            <em>References available upon request</em>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.getElementById("darkModeToggle");
+          
+            // Check for saved user preference
+            const saved = localStorage.getItem("darkMode");
+            let isDark = saved === "true";
+          
+            // If no saved preference, use system setting
+            if (saved === null) {
+              isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+          
+            // Apply mode to documentElement to match inline script
+            document.documentElement.classList.toggle("dark-mode", isDark);
+            toggle.checked = isDark;
+          
+            // Handle toggle changes
+            toggle.addEventListener("change", function () {
+              const isChecked = toggle.checked;
+              document.documentElement.classList.toggle("dark-mode", isChecked);
+              localStorage.setItem("darkMode", isChecked);
+            });
+        });
+    </script>
+</body>
+</html>
