@@ -6,6 +6,7 @@
   <title>Tahmid Chowdhury | Backend Software Engineer</title>
   <script>
     (function() {
+      document.documentElement.classList.add("js");
       const saved = localStorage.getItem("darkMode");
       let isDark = saved === "true";
 
@@ -27,43 +28,209 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="intro-content">
-    <label class="switch">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="#home">Tahmid Chowdhury</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link is-active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <label class="switch" aria-label="Toggle dark mode">
         <input type="checkbox" id="darkModeToggle" />
         <span class="slider"></span>
-    </label>
-
-    <div class="intro-content">
-        <h1>Tahmid Chowdhury</h1>
-        <p>Backend Software Engineer | TypeScript, NestJS, Distributed Systems</p>
-        <a href="resume.html" target="_blank" class="resume-btn">View Resume</a>
-      </div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      </label>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>Welcome</h2>
-      <p class="lead-text">
-        I'm Tahmid Chowdhury — a backend-focused software engineer building scalable systems with TypeScript, NestJS, SQL, and cloud-based services.
-      </p>
-      <p>
-        My work centers on APIs, background processing, data modeling, and the operational workflows that power real business platforms.
-      </p>
-      <p>
-        Whether you’re here to explore my work, connect over ideas, or discuss new opportunities — welcome. Start with my <a href="projects.html">Projects</a> or learn more <a href="about.html">about me</a>.
-      </p>
+    <section id="home" class="hero-section reveal-section">
+      <div class="hero-card">
+        <p class="eyebrow">Backend Software Engineer</p>
+        <h1>Tahmid Chowdhury</h1>
+        <p class="hero-headline">Backend Software Engineer | TypeScript, NestJS, Distributed Systems</p>
+        <p class="hero-summary">
+          I build APIs, data workflows, and backend systems that power real-world platforms.
+        </p>
+        <div class="hero-actions">
+          <a href="resume.html" target="_blank" class="resume-btn">View Resume</a>
+          <a href="https://github.com/TahmidChowdhury" target="_blank" class="button button-secondary">GitHub</a>
+        </div>
+      </div>
     </section>
-    
+
+    <section id="about" class="content-section reveal-section">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+        <h2>Backend systems with product context</h2>
+      </div>
+      <div class="section-card prose-block">
+        <p class="lead-text">
+          I’m a backend-focused software engineer specializing in TypeScript systems, distributed workflows, and data-driven applications.
+        </p>
+        <p>
+          At Victaulic, I’ve worked on modernizing legacy internal platforms into scalable services using NestJS, Angular, SQL, and Azure. This included refactoring tightly coupled systems, improving background processing reliability, and supporting integrations across teams.
+        </p>
+        <p>
+          In parallel, I’m building AISeq, where I lead the architecture of a wellness genomics platform using TypeScript, PostgreSQL, Prisma, and clean architecture. This includes designing versioned data models and workflow-driven APIs.
+        </p>
+        <p>
+          I focus on backend systems involving APIs, workflows, integrations, and data platforms.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience" class="content-section reveal-section">
+      <div class="section-heading">
+        <p class="eyebrow">Experience</p>
+        <h2>What I Work On</h2>
+      </div>
+      <div class="experience-grid">
+        <article class="section-card experience-card">
+          <div class="card-topline">
+            <div>
+              <h3>Victaulic</h3>
+              <p class="role-title">Software Engineer</p>
+            </div>
+            <p class="meta-text">May 2022 — Present</p>
+          </div>
+          <p class="card-summary">
+            Own and evolve internal platforms supporting logistics, operations, and finance workflows across distributed teams.
+          </p>
+          <ul class="detail-list">
+            <li>Build backend APIs and background jobs using NestJS, TypeScript, SQL</li>
+            <li>Refactor legacy systems into modular services</li>
+            <li>Debug distributed systems and integrations</li>
+            <li>Translate business requirements into backend solutions</li>
+          </ul>
+        </article>
+
+        <article class="section-card experience-card">
+          <div class="card-topline">
+            <div>
+              <h3>AISeq</h3>
+              <p class="role-title">Co-Founder &amp; Head of Engineering</p>
+            </div>
+            <p class="meta-text">Nov 2025 — Present</p>
+          </div>
+          <p class="card-summary">
+            Lead the architecture and development of a wellness genomics platform.
+          </p>
+          <ul class="detail-list">
+            <li>Design backend architecture using TypeScript, PostgreSQL, Prisma</li>
+            <li>Build workflow-driven APIs and authentication systems</li>
+            <li>Define system boundaries for AI-assisted features</li>
+            <li>Design versioned data models</li>
+          </ul>
+        </article>
+      </div>
+      <p class="section-note">Earlier experience includes BPM and financial systems at Savana.</p>
+    </section>
+
+    <section id="projects" class="content-section reveal-section">
+      <div class="section-heading">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected Projects</h2>
+      </div>
+      <div class="project-grid">
+        <article class="section-card project-card">
+          <div class="card-topline">
+            <h3 class="project-title">BankStack — Personal Finance Platform</h3>
+          </div>
+          <p class="card-summary">
+            BankStack is a personal finance platform that integrates with Plaid to track balances, transactions, and debt payoff strategies. It focuses on consolidating financial data, modeling repayment workflows, and providing actionable insights through backend-driven logic.
+          </p>
+          <ul class="detail-list">
+            <li>Built backend services using NestJS, TypeScript, and PostgreSQL with Prisma</li>
+            <li>Integrated Plaid API for account linking, balance sync, and transaction ingestion</li>
+            <li>Designed relational data models for accounts, transactions, and financial workflows</li>
+            <li>Implemented backend logic for debt payoff strategies and financial planning</li>
+          </ul>
+        </article>
+
+        <article class="section-card project-card">
+          <div class="card-topline">
+            <h3 class="project-title">StockScope Pro — Market Sentiment Platform</h3>
+            <a href="https://github.com/TahmidChowdhury/StockScope" target="_blank" class="text-link">View GitHub</a>
+          </div>
+          <p class="card-summary">
+            StockScope Pro is a data-driven platform that ingests and processes financial news and social sentiment through API pipelines and background workflows. It focuses on efficient ticker-based analysis, caching strategies, and transforming unstructured data into structured sentiment signals.
+          </p>
+          <ul class="detail-list">
+            <li>Built a full-stack platform with Next.js and FastAPI for data ingestion and analysis</li>
+            <li>Designed API pipelines to aggregate financial news and Reddit sentiment</li>
+            <li>Implemented background processing and caching to reduce redundant requests</li>
+            <li>Developed sentiment analysis workflows using VADER</li>
+          </ul>
+        </article>
+
+        <article class="section-card project-card">
+          <div class="card-topline">
+            <h3 class="project-title">Enterprise Integration Platform</h3>
+            <p class="meta-text">Victaulic</p>
+          </div>
+          <p class="card-summary">
+            Backend integrations for manufacturing/construction systems.
+          </p>
+          <ul class="detail-list">
+            <li>Modernized monorepo into separated frontend/backend services to reduce coupling and improve deployment flexibility</li>
+            <li>Upgraded stack from Node.js 12 to 22, Angular 11 to 16, and NestJS 7 to 10+</li>
+            <li>Built backend services using NestJS and Azure Service Bus for event-driven workflows</li>
+            <li>Enabled near real-time data synchronization across internal and external systems</li>
+            <li>Supported integrations with Autodesk Forge and MuleSoft</li>
+            <li>Improved system reliability by resolving production issues and refactoring legacy code</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="content-section reveal-section">
+      <div class="section-heading">
+        <p class="eyebrow">Skills</p>
+        <h2>What I Work With</h2>
+      </div>
+      <div class="section-card focus-panel">
+        <div class="focus-group">
+          <h3>Backend &amp; APIs</h3>
+          <p>TypeScript · Node.js · NestJS · REST APIs</p>
+        </div>
+        <div class="focus-group">
+          <h3>Data &amp; Storage</h3>
+          <p>PostgreSQL · MySQL · Prisma · TypeORM</p>
+        </div>
+        <div class="focus-group">
+          <h3>Workflows &amp; Systems</h3>
+          <p>Background jobs · Event-driven systems · Data modeling</p>
+        </div>
+        <div class="focus-group">
+          <h3>Cloud &amp; Tooling</h3>
+          <p>Azure · AWS · Docker · CI/CD</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section reveal-section">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s Connect</h2>
+      </div>
+      <div class="section-card contact-panel">
+        <p class="lead-text">
+          I’m currently focused on backend engineering roles in NYC / Jersey City. Feel free to reach out.
+        </p>
+        <div class="contact-actions">
+          <a href="https://www.linkedin.com/in/tahmid-chowdhury-90444746/" target="_blank" class="button">LinkedIn</a>
+          <a href="https://github.com/TahmidChowdhury" target="_blank" class="button button-secondary">GitHub</a>
+          <a href="resume.html" target="_blank" class="button button-secondary">Resume</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>© 2026 Tahmid Chowdhury</p>
   </footer>
   <script src="assets/js/darkmode.js"></script>
