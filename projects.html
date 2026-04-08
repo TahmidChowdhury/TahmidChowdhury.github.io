@@ -14,10 +14,8 @@
       }
 
       if (isDark) {
-        // Disable transitions temporarily
         document.documentElement.style.transition = 'none';
         document.documentElement.classList.add("dark-mode");
-        // Re-enable transitions after a short delay
         setTimeout(() => {
           document.documentElement.style.transition = '';
         }, 0);
@@ -32,126 +30,59 @@
         <input type="checkbox" id="darkModeToggle" />
         <span class="slider"></span>
     </label>
-    <h1 class="page-title-gradient">Projects & Case Studies</h1>
+    <h1 class="page-title-gradient">Projects &amp; Case Studies</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <main>
 
-      <!-- StockScope Pro -->
-      <section class="project">
-        <h2 class="project-title">StockScope Pro</h2>
-        <p class="subtext"><strong>Tech Stack:</strong> Next.js 15, React 19, TypeScript, FastAPI, Python 3.9+, Tailwind CSS 4, React Query, VADER NLP, Docker</p>
-        <p class="lead-text">
-          Advanced stock sentiment analysis platform with real-time data processing, AI-powered investment recommendations, and professional dashboard interface for smart investment decisions.
-        </p>
-        <ul>
-          <li>Modern full-stack architecture with Next.js frontend and FastAPI backend</li>
-          <li>Real-time sentiment analysis from Reddit, financial news, and SEC filings</li>
-          <li>AI-powered BUY/HOLD/SELL recommendations with confidence scores</li>
-          <li>Professional dark-themed dashboard with interactive charts and real-time updates</li>
-          <li>Multi-level authentication, role-based access, and comprehensive caching strategy</li>
-          <li>Containerized deployment with Docker Compose for scalable production hosting</li>
-          <li>Background task processing, API response caching, and performance optimization</li>
-        </ul>
-        <p class="subtext">
-          This project showcases my ability to architect modern full-stack applications with real-time data processing, implementing best practices for performance, security, and user experience in financial technology.
-        </p>
-        <a href="https://github.com/TahmidChowdhury/StockScope" target="_blank">View on GitHub →</a>
-      </section>
-    
-      <!-- Victaulic Refactor Project -->
-      <section class="project">
-        <h2 class="project-title">Victaulic Platform Refactor</h2>
-        <p class="subtext"><strong>Tech Stack:</strong> Angular 11, NestJS, TypeORM, MySQL, SQL Server, GraphQL, Azure Service Bus, Docker, Autodesk Forge API, MuleSoft, Mendix</p>
-        <p class="lead-text">
-          Led the comprehensive modernization of Victaulic's legacy enterprise platform used by global manufacturing teams, transforming monolithic architecture into a scalable microservices ecosystem serving thousands of users worldwide.
-        </p>
-        <div class="project-subsection">
-          <h3>Key Achievements:</h3>
-          <ul>
-            <li><strong>Microservices Architecture:</strong> Decomposed monolithic application into 15+ modular NestJS services including project management, material planning, fabrication tracking, and document generation</li>
-            <li><strong>Database Optimization:</strong> Implemented TypeORM with MySQL/SQL Server integration, created 50+ database migrations, and optimized complex queries for enterprise-scale data processing</li>
-            <li><strong>API Gateway & GraphQL:</strong> Built unified GraphQL API layer serving Angular frontend with 100+ resolvers and REST controllers for external integrations</li>
-            <li><strong>Enterprise Integrations:</strong> Developed seamless connections with Autodesk Forge (BIM360), MuleSoft ESB, Mendix low-code platform, and Azure Service Bus for real-time data synchronization</li>
-            <li><strong>Performance Engineering:</strong> Reduced application load times by 60% through code splitting, lazy loading, and efficient caching strategies</li>
-            <li><strong>CI/CD Pipeline:</strong> Architected Azure DevOps workflows with automated testing, Docker containerization, and multi-environment deployments</li>
-            <li><strong>Module Federation:</strong> Implemented Nx monorepo structure with shared libraries, enabling independent team development and deployment cycles</li>
-          </ul>
-        </div>
-        <div class="project-subsection">
-          <h3>Technical Leadership:</h3>
-          <ul>
-            <li>Mentored 2+ junior developers through architectural reviews and pair programming sessions</li>
-            <li>Established coding standards, testing protocols, and documentation practices across engineering teams</li>
-            <li>Reduced deployment time from 4 hours to 30 minutes through infrastructure automation</li>
-            <li>Improved system reliability with comprehensive error handling, logging, and monitoring solutions</li>
-          </ul>
-        </div>
-        <p class="subtext">
-          This project showcases my expertise in large-scale enterprise architecture, leading cross-functional teams, and delivering mission-critical software that directly impacts manufacturing operations across multiple continents.
-        </p>
-      </section>
-    
-      <!-- SpoolTracker Mobile App -->
-      <section class="project">
-        <h2 class="project-title">SpoolTracker Mobile App - Project Management & Stakeholder Coordination</h2>
-        <p class="subtext"><strong>Tech Stack:</strong> React Native, Redux, Jest, React Native Testing Library, Firebase, iOS/Android, CI/CD | <strong>Role:</strong> Project Manager & Technical Lead</p>
-        <p class="lead-text">
-          Managed and coordinated a complex React Native industrial tracking application for Victaulic after inheriting the project during a critical developer transition period. Led cross-functional collaboration between development team and business stakeholders.
-        </p>
-        <div class="project-subsection">
-          <h3>Key Responsibilities & Achievements:</h3>
-          <ul>
-            <li><strong>Project Management:</strong> Coordinated complex stakeholder relationships across field operations, business teams, and technical staff</li>
-            <li><strong>Requirements Engineering:</strong> Gathered and validated requirements with end-users in construction and manufacturing environments</li>
-            <li><strong>Technical Documentation:</strong> Created comprehensive knowledge transfer materials to ensure project continuity and team onboarding</li>
-            <li><strong>Quality Assurance:</strong> Implemented testing standards and CI/CD processes across the development lifecycle</li>
-            <li><strong>Risk Management:</strong> Managed critical transition period ensuring zero business disruption for active construction projects</li>
-            <li><strong>Cross-Platform Coordination:</strong> Managed iOS and Android deployment pipelines across multiple environments (Dev/Staging/Production)</li>
-            <li><strong>Stakeholder Communication:</strong> Facilitated collaboration between business stakeholders and technical teams</li>
-          </ul>
-        </div>
-        <p class="subtext">
-          This project demonstrates my ability to manage complex technical projects in fast-paced environments, coordinate between diverse stakeholders, and ensure business continuity during challenging transitions - skills directly applicable to collaborative team environments.
-        </p>
-        <p class="subtext"><em>Note: Due to enterprise nature, code repository is private. Technical documentation and project artifacts available upon request.</em></p>
-      </section>
-    
-      <!-- Mentorship Project -->
-      <section class="project">
-        <h2 class="project-title">Mentorship & Onboarding</h2>
-        <p class="subtext"><strong>Team Impact:</strong> Intern & junior developer training</p>
-        <p class="lead-text">
-          Provided guidance to new engineers through pair programming, code reviews, and architecture walkthroughs.
-        </p>
-        <ul>
-          <li>Created onboarding docs and internal learning materials</li>
-          <li>Held weekly architecture deep-dives and Q&A sessions</li>
-          <li>Improved confidence and productivity of new hires</li>
-        </ul>
-        <p class="subtext">
-          Mentorship taught me how to lead with clarity, patience, and empathy — all while leveling up the team's engineering discipline.
-        </p>
-      </section>
-    
-    </main>
-    
+    <!-- StockScope Pro -->
+    <section class="project">
+      <h2 class="project-title">StockScope Pro</h2>
+      <p class="subtext"><strong>Tech Stack:</strong> Next.js, React, TypeScript, FastAPI, Python, Docker</p>
+      <p class="lead-text">
+        StockScope Pro is a data-driven analytics platform that ingests financial news and social sentiment through API pipelines and background processing workflows. It focuses on efficient ticker-based analysis, caching strategies, and presenting structured sentiment data.
+      </p>
+      <ul>
+        <li>Built with Next.js frontend and FastAPI backend</li>
+        <li>Implemented data ingestion pipelines for financial and social sentiment sources</li>
+        <li>Designed background processing and caching to avoid redundant data fetching</li>
+        <li>Developed a dashboard interface for analyzing sentiment by ticker</li>
+      </ul>
+      <a href="https://github.com/TahmidChowdhury/StockScope" target="_blank">View on GitHub &rarr;</a>
+    </section>
+
+    <!-- Enterprise Integration Platform -->
+    <section class="project">
+      <h2 class="project-title">Enterprise Integration Platform &mdash; Victaulic</h2>
+      <p class="subtext"><strong>Tech Stack:</strong> Angular, NestJS, TypeORM, MySQL, Azure Service Bus, Autodesk Forge, MuleSoft, Docker</p>
+      <p class="lead-text">
+        An enterprise integration platform supporting data synchronization across internal and external systems in manufacturing and construction workflows.
+      </p>
+      <ul>
+        <li>Built backend services and integrations using NestJS and Azure Service Bus</li>
+        <li>Enabled near real-time data synchronization across multiple systems</li>
+        <li>Supported workflows involving Autodesk Forge and MuleSoft integrations</li>
+        <li>Improved reliability and consistency of cross-system data exchange</li>
+      </ul>
+      <p class="subtext"><em>Enterprise codebase &mdash; technical details available upon request.</em></p>
+    </section>
+
   </main>
 
   <footer>
     <section class="project">
       <p class="subtext">
-        Like what you see? I’m always open to new challenges and collaborations.  
-        <a href="contact.html">Reach out and let’s talk →</a>
+        Like what you see? I'm always open to new challenges and collaborations.
+        <a href="contact.html">Reach out and let's talk &rarr;</a>
       </p>
-    </section>    
-    <p>© 2026 Tahmid Chowdhury</p>
+    </section>
+    <p>&copy; 2026 Tahmid Chowdhury</p>
   </footer>
   <script src="assets/js/darkmode.js"></script>
   <script src="assets/js/main.js"></script>

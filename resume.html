@@ -34,7 +34,7 @@
             --text-secondary: #404040;
             --text-muted: #666;
             --bg-primary: #fafafa;
-            --bg-secondary: #f5f5f5;
+            --bg-secondary: #f0f0f0;
             --bg-accent: #f1f8e9;
 
             /* Dark mode colors */
@@ -59,10 +59,10 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            line-height: 1.38;
             color: var(--text-primary);
             background: var(--bg-primary);
-            font-size: 11pt;
+            font-size: 10pt;
             transition: all var(--transition-fast);
         }
 
@@ -74,9 +74,8 @@
         .resume-container {
             max-width: 8.5in;
             margin: 0 auto;
-            padding: 0.5in;
+            padding: 0.28in 0.34in;
             background: white;
-            min-height: 11in;
             transition: all var(--transition-fast);
         }
 
@@ -87,32 +86,32 @@
         /* Header Section */
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             border-bottom: 3px solid var(--primary-green);
-            padding-bottom: 20px;
+            padding-bottom: 8px;
         }
 
         .name {
-            font-size: 28pt;
+            font-size: 21pt;
             font-weight: 700;
             color: var(--primary-green-dark);
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             letter-spacing: -0.02em;
         }
 
         .title {
-            font-size: 14pt;
+            font-size: 10.6pt;
             color: var(--text-muted);
             font-weight: 500;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
-            font-size: 10pt;
+            gap: 8px;
+            font-size: 8.8pt;
         }
 
         .contact-item {
@@ -131,16 +130,16 @@
 
         /* Section Headers */
         .section {
-            margin-bottom: 25px;
+            margin-bottom: 9px;
         }
 
         .section-title {
-            font-size: 14pt;
+            font-size: 10.5pt;
             font-weight: 700;
             color: var(--primary-green-dark);
             border-bottom: 2px solid var(--bg-secondary);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all var(--transition-fast);
@@ -153,8 +152,8 @@
 
         /* Professional Summary */
         .summary {
-            font-size: 11pt;
-            line-height: 1.7;
+            font-size: 9.4pt;
+            line-height: 1.5;
             color: var(--text-secondary);
             text-align: justify;
             transition: color var(--transition-fast);
@@ -168,7 +167,8 @@
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 3px 14px;
+            font-size: 9.1pt;
         }
 
         html.dark-mode .skills-grid {
@@ -177,18 +177,36 @@
 
         /* Experience Section */
         .job {
-            margin-bottom: 20px;
+            margin-bottom: 7px;
+            padding-bottom: 7px;
+            border-bottom: 1px solid var(--bg-secondary);
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        html.dark-mode .job {
+            border-bottom-color: var(--dark-bg-accent);
+        }
+
+        html.dark-mode .job:last-child {
+            border-bottom: none;
         }
 
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 10px;
+            margin-bottom: 4px;
         }
 
         .job-title {
-            font-size: 12pt;
+            font-size: 10.3pt;
             font-weight: 700;
             color: var(--primary-green-dark);
             transition: color var(--transition-fast);
@@ -199,7 +217,7 @@
         }
 
         .company {
-            font-size: 11pt;
+            font-size: 9.5pt;
             font-weight: 600;
             color: var(--text-secondary);
             transition: color var(--transition-fast);
@@ -210,9 +228,11 @@
         }
 
         .job-date {
-            font-size: 10pt;
+            font-size: 9pt;
             color: var(--text-muted);
             font-style: italic;
+            white-space: nowrap;
+            padding-left: 8px;
             transition: color var(--transition-fast);
         }
 
@@ -223,14 +243,15 @@
         .achievement-list {
             list-style: none;
             padding-left: 0;
+            margin-top: 2px;
         }
 
         .achievement-list li {
-            margin-bottom: 6px;
-            padding-left: 15px;
+            margin-bottom: 1px;
+            padding-left: 14px;
             position: relative;
-            font-size: 10pt;
-            line-height: 1.5;
+            font-size: 9.1pt;
+            line-height: 1.28;
         }
 
         .achievement-list li::before {
@@ -253,10 +274,16 @@
 
         /* Projects Section */
         .project {
-            margin-bottom: 20px;
+            margin-bottom: 7px;
+            padding-left: 10px;
             border-left: 3px solid var(--bg-secondary);
-            padding-left: 15px;
+            break-inside: avoid;
+            page-break-inside: avoid;
             transition: border-color var(--transition-fast);
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
         }
 
         html.dark-mode .project {
@@ -264,10 +291,10 @@
         }
 
         .project-title {
-            font-size: 12pt;
+            font-size: 10.2pt;
             font-weight: 700;
             color: var(--primary-green-dark);
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             transition: color var(--transition-fast);
         }
 
@@ -276,10 +303,10 @@
         }
 
         .tech-stack {
-            font-size: 10pt;
+            font-size: 9pt;
             color: var(--text-muted);
             font-weight: 500;
-            margin-bottom: 6px;
+            margin-bottom: 2px;
             transition: color var(--transition-fast);
         }
 
@@ -288,10 +315,10 @@
         }
 
         .project-description {
-            font-size: 10pt;
+            font-size: 9.5pt;
             color: var(--text-secondary);
-            margin-bottom: 8px;
-            line-height: 1.5;
+            margin-bottom: 4px;
+            line-height: 1.4;
             transition: color var(--transition-fast);
         }
 
@@ -304,6 +331,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 10pt;
         }
 
         .degree {
@@ -373,22 +401,98 @@
             text-align: center;
             font-size: 9pt;
             color: var(--text-muted);
-            margin-top: 26px;
+            margin-top: 10px;
         }
 
         /* Print Styles */
         @media print {
-            body {
+            html, body {
+                width: 8.5in;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                background: white !important;
+                color: black !important;
+                font-size: 9pt;
+                line-height: 1.25;
+            }
+
+            .resume-container {
+                max-width: 100%;
+                padding: 0.18in 0.22in;
+                margin: 0;
+                background: white !important;
+            }
+
+            .job-header,
+            .education-item {
+                display: flex;
+            }
+
+            .job-date {
+                white-space: nowrap;
+                padding-left: 8px;
+            }
+
+            .skills-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2px 12px;
+            }
+
+            .job,
+            .project,
+            .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .section-title {
+                page-break-after: avoid;
+            }
+
+            .achievement-list {
+                page-break-before: avoid;
+            }
+
+            .section {
+                margin-bottom: 6px;
+            }
+
+            .job {
+                margin-bottom: 6px;
+                padding-bottom: 5px;
+            }
+
+            .project {
+                margin-bottom: 5px;
+                padding-left: 10px;
+            }
+
+            .summary {
+                font-size: 9pt;
+            }
+
+            .achievement-list li {
+                font-size: 8.8pt;
+                line-height: 1.22;
+            }
+
+            .name {
+                font-size: 20pt;
+            }
+
+            .title {
                 font-size: 10pt;
             }
-            .resume-container {
-                padding: 0.3in;
+
+            .contact-info {
+                gap: 8px;
+                font-size: 8.5pt;
             }
-            .name {
-                font-size: 24pt;
-            }
-            .section-title {
-                font-size: 12pt;
+
+            .dark-mode-toggle {
+                display: none !important;
             }
         }
     </style>
@@ -404,7 +508,7 @@
     <div class="resume-container">
         <header class="header">
             <h1 class="name">Tahmid Chowdhury</h1>
-            <p class="title">Backend Software Engineer</p>
+            <p class="title">Backend Software Engineer | TypeScript, NestJS, Distributed Systems</p>
             <div class="contact-info">
                 <a class="contact-item" href="https://tahmidchowdhury.github.io">🌐 Portfolio</a>
                 <span class="contact-item">📍 Jersey City, NJ</span>
@@ -417,21 +521,19 @@
         <section class="section">
             <h2 class="section-title">Profile</h2>
             <p class="summary">
-                Backend-leaning Software Engineer specializing in TypeScript, distributed systems, and data-driven platforms. I design and evolve production systems using NestJS, Angular, and cloud-based architectures, with a focus on scalability, reliability, and maintainability.
-                <br><br>
-                I’ve owned complex systems end-to-end, from data modeling and API design to production debugging and cross-team integration. I’m currently leading the architecture and development of a genomics-based wellness platform, with growing interest in AI-assisted systems and workflow-driven applications.
+                Backend-focused Software Engineer with 4+ years of experience building and evolving business-critical systems using TypeScript, NestJS, SQL, and cloud-based architectures. Experienced in API design, distributed workflows, background processing, and production debugging across internal platforms and third-party integrations. Strong track record of owning backend-heavy systems, improving reliability, and translating ambiguous operational needs into scalable technical solutions.
             </p>
         </section>
 
         <section class="section">
             <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
-                <div><strong>Backend:</strong> Node.js, NestJS, TypeScript, REST APIs, SQL</div>
-                <div><strong>Frontend:</strong> Angular, React, HTML5, CSS3</div>
-                <div><strong>Cloud &amp; DevOps:</strong> Azure, AWS (EC2, S3, RDS), Docker, CI/CD</div>
+                <div><strong>Backend:</strong> TypeScript, Node.js, NestJS, REST APIs, SQL, background jobs, event-driven workflows</div>
+                <div><strong>Frontend:</strong> Angular, React, HTML, CSS</div>
                 <div><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB</div>
-                <div><strong>Architecture:</strong> Distributed systems, event-driven systems, background processing</div>
-                <div><strong>Tools:</strong> Prisma, TypeORM, GitHub Actions, Jenkins</div>
+                <div><strong>Cloud / DevOps:</strong> Azure, AWS, Docker, CI/CD, GitHub Actions, Jenkins</div>
+                <div><strong>Architecture:</strong> Distributed systems, API design, data modeling, asynchronous processing</div>
+                <div><strong>Tools:</strong> Prisma, TypeORM, Git</div>
             </div>
         </section>
 
@@ -447,11 +549,10 @@
                     <div class="job-date">Nov 2025 — Present</div>
                 </div>
                 <ul class="achievement-list">
-                    <li>Lead the architecture and development of a wellness genomics platform, designing a modular monolith using clean architecture principles and TypeScript services</li>
-                    <li>Designed versioned, audit-friendly data models with PostgreSQL and Prisma to support evolving health inputs and recommendations</li>
-                    <li>Built secure authentication flows and backend APIs for structured data ingestion and workflow-driven user experiences</li>
-                    <li>Defined system boundaries for integrating AI-assisted workflows while keeping system behavior deterministic and explainable</li>
-                    <li>Work closely with product and design to translate ambiguous requirements into scalable system designs</li>
+                    <li>Lead the architecture and development of a wellness genomics platform using TypeScript, PostgreSQL, Prisma, and clean architecture principles</li>
+                    <li>Designed versioned, audit-friendly data models to support evolving user inputs and recommendation workflows</li>
+                    <li>Built backend APIs and authentication flows for structured data intake and workflow-driven user experiences</li>
+                    <li>Defined system boundaries for AI-assisted workflows to ensure deterministic, explainable platform behavior</li>
                 </ul>
             </div>
 
@@ -464,12 +565,13 @@
                     <div class="job-date">May 2022 — Present</div>
                 </div>
                 <ul class="achievement-list">
-                    <li>Own and evolve internal full-stack platforms supporting logistics, operations, and finance workflows across distributed teams</li>
-                    <li>Refactor legacy systems into modular services using NestJS and Angular to improve maintainability and reduce coupling</li>
-                    <li>Design and implement backend APIs and background processing workflows for asynchronous, event-driven data flows</li>
-                    <li>Model and optimize relational data structures in MySQL and PostgreSQL for complex workflows</li>
-                    <li>Debug and resolve production issues across distributed services and third-party integrations including Autodesk Forge, MuleSoft, and Azure Service Bus</li>
-                    <li>Mentor junior engineers and interns through onboarding, code reviews, and engineering best practices</li>
+                    <li>Own and evolve internal platforms supporting logistics, operations, and finance workflows across distributed teams</li>
+                    <li>Design and implement backend services, APIs, and background jobs using NestJS, TypeScript, and SQL for event-driven systems</li>
+                    <li>Refactor legacy systems into modular service boundaries to improve maintainability and reduce coupling</li>
+                    <li>Model and optimize relational data structures in MySQL and PostgreSQL for complex operational workflows</li>
+                    <li>Debug and resolve production issues across distributed services and integrations (Autodesk Forge, MuleSoft, Azure Service Bus)</li>
+                    <li>Translate ambiguous business requirements into practical, scalable backend solutions</li>
+                    <li>Mentor junior engineers and interns through onboarding, code reviews, and technical guidance</li>
                 </ul>
             </div>
 
@@ -482,11 +584,10 @@
                     <div class="job-date">Oct 2019 — Apr 2022</div>
                 </div>
                 <ul class="achievement-list">
-                    <li>Design, build, test, deploy, and maintain business process management and financial software.</li>
-                    <li>Collaborate with project managers and leadership on system configuration and delivery.</li>
-                    <li>Work in Agile environments using Jira, participating in sprint planning and reviews.</li>
-                    <li>Create and manage SQL tables and views following feature-driven development practices.</li>
-                    <li>Provide onboarding and training support for new engineers and users.</li>
+                    <li>Built and maintained business process and financial software in an Agile environment</li>
+                    <li>Collaborated with project managers and stakeholders to support system configuration and feature delivery</li>
+                    <li>Designed and managed SQL tables and views to support application workflows and reporting</li>
+                    <li>Supported onboarding and knowledge transfer for engineers and end users</li>
                 </ul>
             </div>
         </section>
@@ -497,17 +598,17 @@
             <div class="project">
                 <div class="project-title">StockScope Pro — Personal Project</div>
                 <div class="tech-stack">Next.js, React, TypeScript, Python, FastAPI, Docker</div>
-                <p class="project-description">
-                    Built a data-driven analytics platform that ingests and processes financial and social sentiment data using background jobs, caching strategies, and API-driven pipelines.
-                </p>
+                <ul class="achievement-list">
+                    <li>Built a data-driven platform that ingests and analyzes financial and social sentiment using API pipelines, background jobs, and caching strategies</li>
+                </ul>
             </div>
 
             <div class="project">
                 <div class="project-title">Enterprise Integration Platform — Victaulic</div>
                 <div class="tech-stack">Angular, NestJS, Azure Service Bus, Autodesk Forge, MuleSoft</div>
-                <p class="project-description">
-                    Develop and maintain enterprise integrations enabling real-time data synchronization across manufacturing and construction systems.
-                </p>
+                <ul class="achievement-list">
+                    <li>Developed enterprise integrations enabling near real-time data synchronization across manufacturing and construction systems</li>
+                </ul>
             </div>
         </section>
 
