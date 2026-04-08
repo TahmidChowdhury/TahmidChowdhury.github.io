@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const visibilityMap = new Map(sections.map((section) => [section.id, 0]));
+  const revealedSections = new Set();
 
   const setActiveLink = function (sectionId) {
     navLinks.forEach((link) => {
@@ -35,8 +36,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver(
     function (entries) {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
+        if (entry.isIntersecting && !revealedSections.has(entry.target.id)) {
+          revealedSections.add(entry.target.id);
+
+          // Delay the class flip until after paint so mobile browsers animate
+          // the transition instead of snapping straight to the visible state.
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              entry.target.classList.add("is-visible");
+            });
+          });
+
+          observer.unobserve(entry.target);
         }
 
         visibilityMap.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
@@ -45,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
       updateActiveLink();
     },
     {
-      threshold: [0.15, 0.3, 0.45, 0.6],
-      rootMargin: "-12% 0px -18% 0px"
+      threshold: [0.08, 0.18, 0.32, 0.48],
+      rootMargin: "0px 0px -12% 0px"
     }
   );
 
