@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = Array.from(document.querySelectorAll(".reveal-section[id]"));
   const navLinks = Array.from(document.querySelectorAll(".nav-link[href^='#']"));
 
-  if (!sections.length || !navLinks.length) {
+  sections.forEach((section) => section.classList.add("reveal-ready"));
+
+  if (!sections.length) {
     return;
   }
 
@@ -20,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const updateActiveLink = function () {
+    if (!navLinks.length) {
+      return;
+    }
+
     let activeSectionId = sections[0].id;
     let highestRatio = 0;
 
@@ -33,20 +39,39 @@ document.addEventListener("DOMContentLoaded", function () {
     setActiveLink(activeSectionId);
   };
 
+  const revealSection = function (section) {
+    if (revealedSections.has(section.id)) {
+      return;
+    }
+
+    revealedSections.add(section.id);
+
+    if (prefersReducedMotion) {
+      section.classList.add("is-visible");
+      return;
+    }
+
+    // Wait for the prepared hidden state to paint before flipping visible.
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        section.classList.add("is-visible");
+      });
+    });
+  };
+
+  if (typeof window.IntersectionObserver !== "function") {
+    sections.forEach((section) => revealSection(section));
+    if (navLinks.length) {
+      setActiveLink(sections[0].id);
+    }
+    return;
+  }
+
   const observer = new IntersectionObserver(
     function (entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !revealedSections.has(entry.target.id)) {
-          revealedSections.add(entry.target.id);
-
-          // Delay the class flip until after paint so mobile browsers animate
-          // the transition instead of snapping straight to the visible state.
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              entry.target.classList.add("is-visible");
-            });
-          });
-
+          revealSection(entry.target);
           observer.unobserve(entry.target);
         }
 
@@ -56,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
       updateActiveLink();
     },
     {
-      threshold: [0.08, 0.18, 0.32, 0.48],
-      rootMargin: "0px 0px -12% 0px"
+      threshold: [0, 0.04, 0.12, 0.24, 0.4],
+      rootMargin: "0px 0px -6% 0px"
     }
   );
 
@@ -83,9 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const initialHash = window.location.hash.replace("#", "");
-  if (initialHash && document.getElementById(initialHash)) {
+  if (navLinks.length && initialHash && document.getElementById(initialHash)) {
     setActiveLink(initialHash);
-  } else {
+  } else if (navLinks.length) {
     setActiveLink(sections[0].id);
   }
 });
