@@ -9,13 +9,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=20260410">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260410">
   <meta property="og:title" content="Tahmid Chowdhury — Backend Software Engineer">
-  <meta property="og:description" content="Backend-focused engineer building APIs, data workflows, and scalable systems with TypeScript and NestJS.">
+  <meta property="og:description" content="Backend engineer building thoughtful APIs, data workflows, and reliable systems with TypeScript and NestJS.">
   <meta property="og:image" content="https://tahmidchowdhury.github.io/assets/og-image.png">
   <meta property="og:url" content="https://tahmidchowdhury.github.io/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tahmid Chowdhury — Backend Software Engineer">
-  <meta name="twitter:description" content="Backend-focused engineer building APIs, data workflows, and scalable systems.">
+  <meta name="twitter:description" content="Backend engineer building thoughtful APIs, data workflows, and reliable systems.">
   <meta name="twitter:image" content="https://tahmidchowdhury.github.io/assets/og-image.png">
   <script>
     (function() {
@@ -38,13 +38,35 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260410">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260410c">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header-inner">
-      <a class="site-brand" href="#home">Tahmid Chowdhury</a>
-      <nav class="site-nav" aria-label="Primary">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+      >
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+      </button>
+      <a class="site-brand" href="#home" aria-label="Tahmid Chowdhury home">
+        <span class="brand-mark" aria-hidden="true">TC</span>
+        <span class="brand-text">
+          <span class="brand-text-full">Tahmid Chowdhury</span>
+        </span>
+      </a>
+      <div class="site-header-actions">
+        <label class="switch" aria-label="Toggle dark mode">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary">
         <a class="nav-link is-active" href="#home">Home</a>
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#experience">Experience</a>
@@ -52,10 +74,6 @@
         <a class="nav-link" href="#skills">Skills</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
-      <label class="switch" aria-label="Toggle dark mode">
-        <input type="checkbox" id="darkModeToggle" />
-        <span class="slider"></span>
-      </label>
     </div>
   </header>
 
@@ -63,10 +81,36 @@
     <section id="home" class="hero-section reveal-section">
       <div class="hero-card">
         <p class="eyebrow">Backend Software Engineer</p>
-        <h1>Tahmid Chowdhury</h1>
-        <p class="hero-headline">Backend Software Engineer | TypeScript, NestJS, Distributed Systems</p>
+        <h1 class="hero-title">
+          <span class="greet-shell" aria-live="polite">
+            <span class="greet-placeholder" aria-hidden="true">As-salaam alaikum.</span>
+            <span class="greet-text greet-visible">Hello.</span>
+            <span class="greet-text">As-salaam alaikum.</span>
+            <span class="greet-text">Hola.</span>
+            <span class="greet-text">Bonjour.</span>
+            <span class="greet-text">Xin chao.</span>
+            <span class="greet-text">Konnichiwa.</span>
+            <span class="greet-text">Namaste.</span>
+            <span class="greet-text">Ciao.</span>
+            <span class="greet-text">Ola.</span>
+            <span class="greet-text">Hallo.</span>
+            <span class="greet-text">Merhaba.</span>
+            <span class="greet-text">Shalom.</span>
+            <span class="greet-text">Hej.</span>
+            <span class="greet-text">Ahoj.</span>
+            <span class="greet-text">Jambo.</span>
+            <span class="greet-text">Sawubona.</span>
+            <span class="greet-text">Habari.</span>
+            <span class="greet-text">Ndewo.</span>
+            <span class="greet-text">Sain uu.</span>
+            <span class="greet-text">Sat sri akal.</span>
+            <span class="greet-text">Privet.</span>
+          </span>
+          <span class="hero-name">I'm Tahmid Chowdhury.</span>
+        </h1>
+        <p class="hero-headline">I build backend systems with TypeScript, NestJS, and a focus on clarity and reliability.</p>
         <p class="hero-summary">
-          I build APIs, data workflows, and backend systems that power real-world platforms.
+          I turn messy integrations and data flows into systems teams can rely on.
         </p>
         <div class="hero-actions">
           <a href="resume.html" target="_blank" class="resume-btn">View Resume</a>
@@ -78,28 +122,52 @@
     <section id="about" class="content-section reveal-section">
       <div class="section-heading">
         <p class="eyebrow">About</p>
-        <h2>Backend systems with product context</h2>
+        <h2>A little about me</h2>
       </div>
       <div class="section-card prose-block">
         <p class="lead-text">
-          I’m a backend-focused software engineer specializing in TypeScript systems, distributed workflows, and data-driven applications.
+          I’m a backend-focused software engineer who likes making complex systems feel simple, steady, and useful.
         </p>
         <p>
-          At Victaulic, I’ve worked on modernizing legacy internal platforms into scalable services using NestJS, Angular, SQL, and Azure. This included refactoring tightly coupled systems, improving background processing reliability, and supporting integrations across teams.
+          At Victaulic, I help modernize internal platforms into cleaner, more scalable services using NestJS, Angular, SQL, and Azure. A lot of that work means untangling legacy systems, improving background jobs, and making integrations easier for teams to depend on.
         </p>
         <p>
-          In parallel, I’m building AISeq, where I lead the architecture of a wellness genomics platform using TypeScript, PostgreSQL, Prisma, and clean architecture. This includes designing versioned data models and workflow-driven APIs.
+          I’m also building AISeq, where I lead the architecture of a wellness genomics platform with TypeScript, PostgreSQL, Prisma, and clean architecture. That work includes shaping versioned data models and building APIs around structured, workflow-driven experiences.
         </p>
         <p>
-          I focus on backend systems involving APIs, workflows, integrations, and data platforms.
+          The common thread in my work is backend systems: APIs, workflows, integrations, and data-heavy platforms that need to stay understandable as they grow.
         </p>
+        <p>
+          Outside of engineering, I like traveling, photography, and cars, especially older BMWs and Porsches. I also enjoy working on my own E46, which probably says a lot about how much I like understanding how things are put together.
+        </p>
+      </div>
+    </section>
+
+    <section id="currently" class="content-section reveal-section">
+      <div class="section-heading">
+        <p class="eyebrow">Currently</p>
+        <h2>What I’m focused on right now</h2>
+      </div>
+      <div class="currently-grid">
+        <article class="section-card currently-card">
+          <h3>Backend platform work</h3>
+          <p>I’m especially interested in backend and platform roles where APIs, integrations, and reliability really matter.</p>
+        </article>
+        <article class="section-card currently-card">
+          <h3>Thoughtful systems</h3>
+          <p>I like work that sits between product and engineering, where clean architecture has to support real teams and real workflows.</p>
+        </article>
+        <article class="section-card currently-card">
+          <h3>NYC-area opportunities</h3>
+          <p>I’m currently most focused on backend engineering opportunities in NYC and Jersey City.</p>
+        </article>
       </div>
     </section>
 
     <section id="experience" class="content-section reveal-section">
       <div class="section-heading">
         <p class="eyebrow">Experience</p>
-        <h2>What I Work On</h2>
+        <h2>What I’m working on</h2>
       </div>
       <div class="experience-grid">
         <article class="section-card experience-card">
@@ -111,13 +179,13 @@
             <p class="meta-text">May 2022 — Present</p>
           </div>
           <p class="card-summary">
-            Own and evolve internal platforms supporting logistics, operations, and finance workflows across distributed teams.
+            I build and improve internal platforms that support logistics, operations, and finance workflows across distributed teams.
           </p>
           <ul class="detail-list">
-            <li>Build backend APIs and background jobs using NestJS, TypeScript, SQL</li>
-            <li>Refactor legacy systems into modular services</li>
-            <li>Debug distributed systems and integrations</li>
-            <li>Translate business requirements into backend solutions</li>
+            <li>I build backend APIs and background jobs with NestJS, TypeScript, and SQL</li>
+            <li>I refactor legacy systems into services that are easier to maintain</li>
+            <li>I troubleshoot distributed systems and production integrations</li>
+            <li>I turn business requirements into practical backend solutions</li>
           </ul>
         </article>
 
@@ -130,37 +198,38 @@
             <p class="meta-text">Nov 2025 — Present</p>
           </div>
           <p class="card-summary">
-            Lead the architecture and development of a wellness genomics platform.
+            I lead the architecture and development of a wellness genomics platform from the backend outward.
           </p>
           <ul class="detail-list">
-            <li>Design backend architecture using TypeScript, PostgreSQL, Prisma</li>
-            <li>Build workflow-driven APIs and authentication systems</li>
-            <li>Define system boundaries for AI-assisted features</li>
-            <li>Design versioned data models</li>
+            <li>I design the backend architecture with TypeScript, PostgreSQL, and Prisma</li>
+            <li>I build workflow-driven APIs and authentication systems</li>
+            <li>I define clear system boundaries for AI-assisted features</li>
+            <li>I design versioned data models that can evolve cleanly over time</li>
           </ul>
         </article>
       </div>
-      <p class="section-note">Earlier experience includes BPM and financial systems at Savana.</p>
+      <p class="section-note">I also bring earlier experience in BPM and financial systems from my time at Savana.</p>
     </section>
 
     <section id="projects" class="content-section reveal-section">
       <div class="section-heading">
         <p class="eyebrow">Projects</p>
-        <h2>Selected Projects</h2>
+        <h2>A few things I’ve built</h2>
       </div>
       <div class="project-grid">
         <article class="section-card project-card">
           <div class="card-topline">
             <h3 class="project-title">BankStack — Personal Finance Platform</h3>
+            <a href="https://github.com/TahmidChowdhury/bankstack" target="_blank" class="text-link">View GitHub</a>
           </div>
           <p class="card-summary">
-            BankStack is a personal finance platform that integrates with Plaid to track balances, transactions, and debt payoff strategies. It focuses on consolidating financial data, modeling repayment workflows, and providing actionable insights through backend-driven logic.
+            A Plaid-powered finance backend that brings accounts, transactions, and payoff planning together in one place.
           </p>
+          <p class="project-impact">Impact: Pulls financial activity and repayment planning into one clearer workflow.</p>
           <ul class="detail-list">
-            <li>Built backend services using NestJS, TypeScript, and PostgreSQL with Prisma</li>
-            <li>Integrated Plaid API for account linking, balance sync, and transaction ingestion</li>
-            <li>Designed relational data models for accounts, transactions, and financial workflows</li>
-            <li>Implemented backend logic for debt payoff strategies and financial planning</li>
+            <li>Built NestJS APIs with TypeScript, PostgreSQL, and Prisma</li>
+            <li>Connected Plaid for account linking, balance sync, and transaction ingestion</li>
+            <li>Modeled debt workflows and planning logic around real financial data</li>
           </ul>
         </article>
 
@@ -170,13 +239,13 @@
             <a href="https://github.com/TahmidChowdhury/StockScope" target="_blank" class="text-link">View GitHub</a>
           </div>
           <p class="card-summary">
-            StockScope Pro is a data-driven platform that ingests and processes financial news and social sentiment through API pipelines and background workflows. It focuses on efficient ticker-based analysis, caching strategies, and transforming unstructured data into structured sentiment signals.
+            A sentiment analysis app that turns financial news and Reddit chatter into ticker-level signals.
           </p>
+          <p class="project-impact">Impact: Makes noisy news and social sentiment easier to scan by ticker and trend.</p>
           <ul class="detail-list">
-            <li>Built a full-stack platform with Next.js and FastAPI for data ingestion and analysis</li>
-            <li>Designed API pipelines to aggregate financial news and Reddit sentiment</li>
-            <li>Implemented background processing and caching to reduce redundant requests</li>
-            <li>Developed sentiment analysis workflows using VADER</li>
+            <li>Built a Next.js and FastAPI app for ingestion, scoring, and analysis</li>
+            <li>Aggregated news and Reddit data through reusable API pipelines</li>
+            <li>Added background processing, caching, and VADER-based sentiment scoring</li>
           </ul>
         </article>
 
@@ -186,15 +255,14 @@
             <p class="meta-text">Victaulic</p>
           </div>
           <p class="card-summary">
-            Backend integrations for manufacturing/construction systems.
+            An internal platform for keeping manufacturing and construction data in sync across business systems.
           </p>
+          <p class="project-impact">Impact: Helps teams rely on faster, cleaner data flow across internal and external systems.</p>
           <ul class="detail-list">
-            <li>Modernized monorepo into separated frontend/backend services to reduce coupling and improve deployment flexibility</li>
-            <li>Upgraded stack from Node.js 12 to 22, Angular 11 to 16, and NestJS 7 to 10+</li>
-            <li>Built backend services using NestJS and Azure Service Bus for event-driven workflows</li>
-            <li>Enabled near real-time data synchronization across internal and external systems</li>
-            <li>Supported integrations with Autodesk Forge and MuleSoft</li>
-            <li>Improved system reliability by resolving production issues and refactoring legacy code</li>
+            <li>Split a tightly coupled monorepo into separate frontend and backend services</li>
+            <li>Modernized the stack from Node 12, Angular 11, and NestJS 7 to current versions</li>
+            <li>Built event-driven integrations with Azure Service Bus, Autodesk Forge, and MuleSoft</li>
+            <li>Improved reliability by fixing production issues and refactoring legacy flows</li>
           </ul>
         </article>
       </div>
@@ -203,7 +271,7 @@
     <section id="skills" class="content-section reveal-section">
       <div class="section-heading">
         <p class="eyebrow">Skills</p>
-        <h2>What I Work With</h2>
+        <h2>Tools I reach for most</h2>
       </div>
       <div class="section-card focus-panel">
         <div class="focus-group">
@@ -228,25 +296,29 @@
     <section id="contact" class="content-section reveal-section">
       <div class="section-heading">
         <p class="eyebrow">Contact</p>
-        <h2>Let’s Connect</h2>
+        <h2>Let’s talk</h2>
       </div>
       <div class="section-card contact-panel">
         <p class="lead-text">
-          I’m currently focused on backend engineering roles in NYC / Jersey City. Feel free to reach out.
+          I’m currently open to backend and platform engineering roles in NYC and Jersey City.
+        </p>
+        <p class="contact-note">
+          If you’re building thoughtful internal tools, APIs, integrations, or data-heavy systems, I’d be glad to connect.
         </p>
         <div class="contact-actions">
-          <a href="https://www.linkedin.com/in/tahmid-chowdhury-90444746/" target="_blank" class="button">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/tahmid-chowdhury-90444746/" target="_blank" class="button">Message on LinkedIn</a>
+          <a href="resume.html" target="_blank" class="button button-secondary">View Resume</a>
           <a href="https://github.com/TahmidChowdhury" target="_blank" class="button button-secondary">GitHub</a>
-          <a href="resume.html" target="_blank" class="button button-secondary">Resume</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <p>Built with HTML, CSS, and JavaScript.</p>
     <p>© 2026 Tahmid Chowdhury</p>
   </footer>
   <script src="assets/js/darkmode.js?v=20260410"></script>
-  <script src="assets/js/main.js?v=20260410"></script>
+  <script src="assets/js/main.js?v=20260410c"></script>
 </body>
 </html>

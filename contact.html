@@ -28,36 +28,66 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260410">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260410c">
 </head>
 <body>
-  <header>
-    <label class="switch">
-        <input type="checkbox" id="darkModeToggle" />
-        <span class="slider"></span>
-    </label>
-    <h1 class="page-title-gradient">Contact Me</h1>
-    <nav>
-      <a href="index.html#home">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#experience">Experience</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+  <header class="site-header is-scrolled">
+    <div class="site-header-inner">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+      >
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+      </button>
+      <a class="site-brand" href="index.html#home" aria-label="Tahmid Chowdhury home">
+        <span class="brand-mark" aria-hidden="true">TC</span>
+        <span class="brand-text">
+          <span class="brand-text-full">Tahmid Chowdhury</span>
+        </span>
+      </a>
+      <div class="site-header-actions">
+        <label class="switch" aria-label="Toggle dark mode">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="index.html#experience">Experience</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="index.html#skills">Skills</a>
+        <a class="nav-link is-active" href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section>
+    <section class="page-intro">
+      <p class="eyebrow">Contact</p>
+      <h1 class="page-title-gradient">Contact Me</h1>
       <p class="lead-text">
-        Whether you’re interested in collaborating, hiring, or just talking shop, I’d love to hear from you.
+        If you want to collaborate, talk through an opportunity, or just connect, I’d be glad to hear from you.
+      </p>
+    </section>
+    <section class="content-section">
+      <p class="lead-text">
+        I’m currently open to backend and platform engineering roles in NYC and Jersey City.
+      </p>
+      <p class="contact-note">
+        The easiest way to reach me is LinkedIn. If you’re hiring, building something thoughtful, or want to talk backend systems, feel free to reach out there.
       </p>
       
       <div class="contact-info">
         <div class="contact-item">
           <strong>Professional Networking:</strong>
           <a href="https://www.linkedin.com/in/tahmid-chowdhury-90444746/" target="_blank" class="contact-link">
-            Connect with me on LinkedIn
+            Message me on LinkedIn
           </a>
         </div>
       
@@ -80,9 +110,10 @@
   </main>
 
   <footer>
+    <p>Built with HTML, CSS, and JavaScript.</p>
     <p>© 2026 Tahmid Chowdhury</p>
   </footer>
   <script src="assets/js/darkmode.js?v=20260410"></script>
-  <script src="assets/js/main.js?v=20260410"></script>
+  <script src="assets/js/main.js?v=20260410c"></script>
 </body>
 </html>
