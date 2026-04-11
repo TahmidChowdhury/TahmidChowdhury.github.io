@@ -26,88 +26,124 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260410">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260410c">
 </head>
 <body>
-  <header>
-    <label class="switch">
-        <input type="checkbox" id="darkModeToggle" />
-        <span class="slider"></span>
-    </label>
-    <h1 class="page-title-gradient">Projects &amp; Case Studies</h1>
-    <nav>
-      <a href="index.html#home">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#experience">Experience</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+  <header class="site-header is-scrolled">
+    <div class="site-header-inner">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+      >
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+        <span class="menu-toggle-line" aria-hidden="true"></span>
+      </button>
+      <a class="site-brand" href="index.html#home" aria-label="Tahmid Chowdhury home">
+        <span class="brand-mark" aria-hidden="true">TC</span>
+        <span class="brand-text">
+          <span class="brand-text-full">Tahmid Chowdhury</span>
+        </span>
+      </a>
+      <div class="site-header-actions">
+        <label class="switch" aria-label="Toggle dark mode">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="index.html#experience">Experience</a>
+        <a class="nav-link is-active" href="projects.html">Projects</a>
+        <a class="nav-link" href="index.html#skills">Skills</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-
-    <!-- BankStack -->
-    <section class="project">
-      <h2 class="project-title">BankStack &mdash; Personal Finance Platform</h2>
-      <p class="subtext"><strong>Tech Stack:</strong> NestJS, TypeScript, PostgreSQL, Prisma, Plaid</p>
+    <section class="page-intro">
+      <p class="eyebrow">Projects</p>
+      <h1 class="page-title-gradient">A Few Projects</h1>
       <p class="lead-text">
-        BankStack is a personal finance platform that integrates with Plaid to track balances, transactions, and debt payoff strategies. It focuses on consolidating financial data, modeling repayment workflows, and providing actionable insights through backend-driven logic.
+        A small selection of projects that reflect how I like to build: practical, backend-heavy, and grounded in real workflows.
       </p>
-      <ul>
-        <li>Built backend services using NestJS, TypeScript, and PostgreSQL with Prisma</li>
-        <li>Integrated Plaid API for account linking, balance sync, and transaction ingestion</li>
-        <li>Designed relational data models for accounts, transactions, and financial workflows</li>
-        <li>Implemented backend logic for debt payoff strategies and financial planning</li>
-      </ul>
     </section>
 
-    <!-- StockScope Pro -->
-    <section class="project">
-      <h2 class="project-title">StockScope Pro &mdash; Market Sentiment Platform</h2>
-      <p class="subtext"><strong>Tech Stack:</strong> Next.js, Python, FastAPI, Docker, VADER</p>
-      <p class="lead-text">
-        StockScope Pro is a data-driven platform that ingests and processes financial news and social sentiment through API pipelines and background workflows. It focuses on efficient ticker-based analysis, caching strategies, and transforming unstructured data into structured sentiment signals.
-      </p>
-      <ul>
-        <li>Built a full-stack platform with Next.js and FastAPI for data ingestion and analysis</li>
-        <li>Designed API pipelines to aggregate financial news and Reddit sentiment</li>
-        <li>Implemented background processing and caching to reduce redundant requests</li>
-        <li>Developed sentiment analysis workflows using VADER</li>
-      </ul>
-      <a href="https://github.com/TahmidChowdhury/StockScope" target="_blank">View on GitHub &rarr;</a>
-    </section>
+    <div class="project-grid">
 
-    <!-- Enterprise Integration Platform -->
-    <section class="project">
-      <h2 class="project-title">Enterprise Integration Platform &mdash; Victaulic</h2>
-      <p class="subtext"><strong>Tech Stack:</strong> Angular, NestJS, TypeORM, MySQL, Azure Service Bus, Autodesk Forge, MuleSoft, Docker</p>
-      <p class="lead-text">
-        An enterprise integration platform supporting data synchronization across internal and external systems in manufacturing and construction workflows.
-      </p>
-      <ul>
-        <li>Modernized monorepo into separated frontend/backend services to reduce coupling and improve deployment flexibility</li>
-        <li>Upgraded stack from Node.js 12 to 22, Angular 11 to 16, and NestJS 7 to 10+</li>
-        <li>Built backend services using NestJS and Azure Service Bus for event-driven workflows</li>
-        <li>Enabled near real-time data synchronization across internal and external systems</li>
-        <li>Supported integrations with Autodesk Forge and MuleSoft</li>
-        <li>Improved system reliability by resolving production issues and refactoring legacy code</li>
-      </ul>
-      <p class="subtext"><em>Enterprise codebase &mdash; technical details available upon request.</em></p>
-    </section>
+      <!-- BankStack -->
+      <div class="project-card section-card reveal-section">
+        <div class="card-topline">
+          <h2 class="project-title">BankStack &mdash; Personal Finance Platform</h2>
+          <a href="https://github.com/TahmidChowdhury/bankstack" target="_blank" rel="noopener noreferrer" class="text-link">View GitHub &rarr;</a>
+        </div>
+        <p class="card-summary">
+          A Plaid-powered finance backend that brings accounts, transactions, and payoff planning together in one place.
+        </p>
+        <p class="project-impact">Impact: Pulls financial activity and repayment planning into one clearer workflow.</p>
+        <ul class="detail-list">
+          <li>Built NestJS APIs with TypeScript, PostgreSQL, and Prisma</li>
+          <li>Connected Plaid for account linking, balance sync, and transaction ingestion</li>
+          <li>Modeled debt workflows and planning logic around real financial data</li>
+        </ul>
+      </div>
+
+      <!-- StockScope Pro -->
+      <div class="project-card section-card reveal-section">
+        <div class="card-topline">
+          <h2 class="project-title">StockScope Pro &mdash; Market Sentiment Platform</h2>
+          <a href="https://github.com/TahmidChowdhury/StockScope" target="_blank" rel="noopener noreferrer" class="text-link">View GitHub &rarr;</a>
+        </div>
+        <p class="card-summary">
+          A sentiment analysis app that turns financial news and Reddit chatter into ticker-level signals.
+        </p>
+        <p class="project-impact">Impact: Makes noisy news and social sentiment easier to scan by ticker and trend.</p>
+        <ul class="detail-list">
+          <li>Built a Next.js and FastAPI app for ingestion, scoring, and analysis</li>
+          <li>Aggregated news and Reddit data through reusable API pipelines</li>
+          <li>Added background processing, caching, and VADER-based sentiment scoring</li>
+        </ul>
+      </div>
+
+      <!-- Enterprise Integration Platform -->
+      <div class="project-card section-card reveal-section">
+        <div class="card-topline">
+          <h2 class="project-title">Enterprise Integration Platform</h2>
+          <span class="text-link">Victaulic</span>
+        </div>
+        <p class="card-summary">
+          An internal platform for keeping manufacturing and construction data in sync across business systems.
+        </p>
+        <p class="project-impact">Impact: Helps teams rely on faster, cleaner data flow across internal and external systems.</p>
+        <ul class="detail-list">
+          <li>Split a tightly coupled monorepo into separate frontend and backend services</li>
+          <li>Modernized the stack from Node 12, Angular 11, and NestJS 7 to current versions</li>
+          <li>Built event-driven integrations with Azure Service Bus, Autodesk Forge, and MuleSoft</li>
+          <li>Improved reliability by fixing production issues and refactoring legacy flows</li>
+        </ul>
+        <p class="project-impact"><em>Enterprise codebase &mdash; technical details available upon request.</em></p>
+      </div>
+
+    </div>
 
   </main>
 
   <footer>
     <section class="project">
       <p class="subtext">
-        Like what you see? I'm always open to new challenges and collaborations.
-        <a href="contact.html">Reach out and let's talk &rarr;</a>
+        If something here feels aligned, I’d be glad to connect.
+        <a href="contact.html">Reach out and let’s talk &rarr;</a>
       </p>
     </section>
+    <p>Built with HTML, CSS, and JavaScript.</p>
     <p>&copy; 2026 Tahmid Chowdhury</p>
   </footer>
   <script src="assets/js/darkmode.js?v=20260410"></script>
-  <script src="assets/js/main.js?v=20260410"></script>
+  <script src="assets/js/main.js?v=20260410c"></script>
 </body>
 </html>
