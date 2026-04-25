@@ -497,6 +497,11 @@
 
         /* Print Styles */
         @media print {
+            @page {
+                size: letter;
+                margin: 0.22in;
+            }
+
             html, body {
                 width: 8.5in;
                 height: auto;
@@ -504,15 +509,20 @@
                 padding: 0;
                 background: white !important;
                 color: black !important;
-                font-size: 9pt;
-                line-height: 1.25;
+                font-size: 8.7pt;
+                line-height: 1.18;
             }
 
             .resume-container {
                 max-width: 100%;
-                padding: 0.18in 0.22in;
+                padding: 0.12in 0.16in;
                 margin: 0;
                 background: white !important;
+            }
+
+            .header {
+                margin-bottom: 8px;
+                padding-bottom: 7px;
             }
 
             .job-header,
@@ -528,7 +538,8 @@
             .skills-grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 2px 12px;
+                gap: 1px 10px;
+                font-size: 8.55pt;
             }
 
             .job,
@@ -547,38 +558,62 @@
             }
 
             .section {
-                margin-bottom: 6px;
+                margin-bottom: 4px;
             }
 
             .job {
-                margin-bottom: 6px;
-                padding-bottom: 5px;
+                margin-bottom: 4px;
+                padding-bottom: 4px;
             }
 
             .project {
-                margin-bottom: 5px;
-                padding-left: 10px;
+                margin-bottom: 4px;
+                padding-left: 8px;
             }
 
             .summary {
-                font-size: 9pt;
+                font-size: 8.7pt;
+                line-height: 1.2;
             }
 
             .achievement-list li {
-                font-size: 8.8pt;
-                line-height: 1.22;
+                margin-bottom: 1px;
+                padding-left: 11px;
+                font-size: 8.5pt;
+                line-height: 1.16;
             }
 
             .name {
-                font-size: 20pt;
+                font-size: 18pt;
             }
 
             .title {
-                font-size: 10pt;
+                font-size: 9.4pt;
             }
 
             .contact-info {
                 gap: 0;
+                font-size: 7.8pt;
+            }
+
+            .section-title {
+                font-size: 9.3pt;
+                padding-bottom: 3px;
+                margin-bottom: 5px;
+            }
+
+            .job-title,
+            .degree {
+                font-size: 9.3pt;
+            }
+
+            .company,
+            .project-title {
+                font-size: 8.9pt;
+            }
+
+            .job-date,
+            .tech-stack {
                 font-size: 8.1pt;
             }
 
@@ -599,7 +634,7 @@
     <div class="resume-container">
         <header class="header">
             <h1 class="name">Tahmid Chowdhury</h1>
-            <p class="title">Backend Software Engineer | TypeScript, NestJS, APIs</p>
+            <p class="title">Fullstack Engineer | TypeScript, Node.js, Developer Platforms</p>
             <div class="contact-info">
                 <a class="contact-item" href="https://tahmidchowdhury.github.io">Portfolio</a>
                 <span class="contact-item">Jersey City, NJ</span>
@@ -612,19 +647,19 @@
         <section class="section">
             <h2 class="section-title">Profile</h2>
             <p class="summary">
-                Backend-focused Software Engineer with 4+ years building reliable APIs, background workflows, and data-heavy systems with TypeScript, NestJS, SQL, and cloud platforms. I specialize in clarifying messy operational needs, improving reliability, and turning legacy or distributed workflows into maintainable backend services.
+                Fullstack engineer with 4+ years building internal platforms, APIs, and workflow-heavy systems with TypeScript, Node.js, NestJS, Angular, SQL, and cloud services. I focus on making complex engineering and operational workflows easier to use and more reliable through clearer service boundaries, practical documentation, and cross-stack debugging. More recently, I have been shaping AI-assisted product behavior by defining agent context, deterministic tool boundaries, and audit-friendly workflow design.
             </p>
         </section>
 
         <section class="section">
             <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
-                <div><strong>Backend:</strong> TypeScript, Node.js, NestJS, REST APIs, SQL, background jobs, event-driven workflows</div>
-                <div><strong>Frontend:</strong> Angular, React, HTML, CSS</div>
-                <div><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB</div>
+                <div><strong>Languages & Frameworks:</strong> TypeScript, Node.js, NestJS, Angular, React, SQL</div>
+                <div><strong>Platform & DX:</strong> Internal tooling, developer onboarding, technical documentation, API design, cross-stack debugging</div>
+                <div><strong>AI Workflows:</strong> Agent context design, deterministic tool boundaries, workflow-driven systems, AI-assisted features</div>
                 <div><strong>Cloud / DevOps:</strong> Azure, AWS, Docker, CI/CD, GitHub Actions, Jenkins</div>
-                <div><strong>Architecture:</strong> Distributed systems, API design, data modeling, asynchronous processing</div>
-                <div><strong>Tools:</strong> Prisma, TypeORM, Git</div>
+                <div><strong>Data & Integrations:</strong> PostgreSQL, MySQL, MongoDB, Prisma, TypeORM, Azure Service Bus, MuleSoft</div>
+                <div><strong>Architecture:</strong> Distributed systems, background jobs, asynchronous processing, service decomposition</div>
             </div>
         </section>
 
@@ -640,10 +675,10 @@
                     <div class="job-date">Nov 2025 — Present</div>
                 </div>
                 <ul class="achievement-list">
-                    <li>Lead the architecture and development of a wellness genomics platform using TypeScript, PostgreSQL, Prisma, and clean architecture principles</li>
-                    <li>Designed versioned, audit-friendly data models to support evolving user inputs and recommendation workflows</li>
+                    <li>Lead the architecture and full-stack development of a wellness genomics platform using TypeScript, PostgreSQL, Prisma, and clean architecture principles</li>
+                    <li>Define agent context and deterministic tool boundaries for AI-assisted workflows so platform behavior stays explainable, auditable, and safe to evolve</li>
+                    <li>Designed versioned, audit-friendly data models to support evolving user inputs, multi-step recommendation flows, and reliable downstream automation</li>
                     <li>Built backend APIs and authentication flows for structured data intake and workflow-driven user experiences</li>
-                    <li>Defined system boundaries for AI-assisted workflows to ensure deterministic, explainable platform behavior</li>
                 </ul>
             </div>
 
@@ -657,10 +692,10 @@
                 </div>
                 <ul class="achievement-list">
                     <li>Own and evolve internal platforms supporting logistics, operations, and finance workflows across distributed teams</li>
-                    <li>Design and implement backend services, APIs, and background jobs using NestJS, TypeScript, and SQL for event-driven systems</li>
-                    <li>Refactor legacy systems into modular service boundaries and optimize relational data models for complex workflows</li>
-                    <li>Debug and resolve production issues across distributed services and integrations (Autodesk Forge, MuleSoft, Azure Service Bus)</li>
-                    <li>Translate ambiguous business requirements into practical backend solutions and mentor junior engineers through onboarding and code reviews</li>
+                    <li>Build full-stack features and backend services with NestJS, TypeScript, Angular, and SQL, with a focus on usability, reliability, and maintainability</li>
+                    <li>Modernized a legacy stack from Node 12, Angular 11, and NestJS 7 to current versions, improving local development, deployability, and long-term support</li>
+                    <li>Debug and resolve issues across APIs, background jobs, integrations, CI/CD paths, and cloud services including Autodesk Forge, MuleSoft, and Azure Service Bus</li>
+                    <li>Refactor tightly coupled systems into clearer service boundaries, document workflows, and support onboarding and code reviews for junior engineers</li>
                 </ul>
             </div>
 
@@ -674,8 +709,8 @@
                 </div>
                 <ul class="achievement-list">
                     <li>Built and maintained business process and financial software in an Agile environment</li>
-                    <li>Collaborated with project managers and stakeholders to support system configuration and feature delivery</li>
-                    <li>Designed and managed SQL tables and views for application workflows, reporting, and knowledge transfer</li>
+                    <li>Partnered with project managers and stakeholders to deliver well-scoped features and support production configuration needs</li>
+                    <li>Designed and managed SQL tables and views for application workflows, reporting, documentation, and knowledge transfer</li>
                 </ul>
             </div>
         </section>
@@ -687,7 +722,8 @@
                 <div class="project-title">StockScope Pro — Personal Project</div>
                 <div class="tech-stack">Next.js, React, TypeScript, Python, FastAPI, Docker</div>
                 <ul class="achievement-list">
-                    <li>Built a data-driven platform that ingests and analyzes financial and social sentiment using API pipelines, background jobs, and caching strategies</li>
+                    <li>Built a full-stack analytics platform with FastAPI and Next.js that combines Reddit, news, SEC, and market data into ticker-level sentiment and fundamentals workflows</li>
+                    <li>Implemented comparison and stock screener APIs with caching, bounded concurrency, and multi-source financial analysis to keep large-universe queries responsive</li>
                 </ul>
             </div>
 
@@ -695,9 +731,9 @@
                 <div class="project-title">BankStack — Personal Finance Dashboard</div>
                 <div class="tech-stack">Angular 19, NestJS, PostgreSQL, Prisma, Plaid API</div>
                 <ul class="achievement-list">
-                    <li>Built a full-stack personal finance dashboard integrating bank accounts and credit cards via Plaid to track debt, balances, and transactions in real time</li>
-                    <li>Implemented an avalanche debt payoff engine that calculates optimal repayment strategies, estimates payoff dates, and projects total interest saved</li>
-                    <li>Designed a scheduled cron job to snapshot daily net worth data, enabling historical charting of financial progress over time</li>
+                    <li>Built a full-stack personal finance dashboard that integrates Plaid account linking, encrypted token storage, cursor-based transaction sync, and real-time balance data</li>
+                    <li>Implemented debt planning workflows that simulate avalanche, snowball, and hybrid payoff strategies using recurring income, expenses, and planned payments</li>
+                    <li>Designed scheduled jobs to snapshot daily net worth data, enabling reliable historical charting and workflow-driven financial insights over time</li>
                 </ul>
             </div>
         </section>
