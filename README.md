@@ -2,7 +2,7 @@
 
 A clean, responsive portfolio showcasing my work as a full-stack developer.
 
-🔗 **Live Site:** [https://TahmidChowdhury.github.io](https://TahmidChowdhury.github.io)
+🔗 **Live Site:** [https://heytahmid.dev](https://heytahmid.dev)
 
 ---
 

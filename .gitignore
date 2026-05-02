@@ -1,4 +1,5 @@
 .DS_Store
+/notes/
 
 # Job-specific resumes (keep base resume.pdf tracked)
 assets/files/resume_*.html
