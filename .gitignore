@@ -6,3 +6,10 @@ assets/files/resume_*.html
 assets/files/resume_*.md
 assets/files/resume_*.docx
 assets/files/resume_*.txt
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
